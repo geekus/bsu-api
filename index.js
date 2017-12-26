@@ -7,8 +7,8 @@ const fetch = require('node-fetch');
 
 const gdaxEndpoint = 'https://api.gdax.com';
 
-const eurNokRate = 9.87; // TODO: Use an currency exchange API to get rate
-const btcAmount =  0.02; // TODO: Use GDAX API to get exact amount
+const eurNokRate = process.env.EUR_NOK_RATE || 9.87; // TODO: Use an currency exchange API to get rate
+const btcAmount =  process.env.BTC_AMOUNT || 0.003; // TODO: Use GDAX API to get exact amount
 
 router.get('/wallet', (req, res) => {
   res.header('Content-Type', 'text/plain');
